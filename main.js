@@ -7,24 +7,31 @@
 //            /____/
 
 // Dog Constructor & Prototype
-function Dog (hungry,color,status,owner) {
-  this.name = this
-  this.hungry = hungry
-  this.color = color
-  this.status = status
-  this.owner = owner
+function Dog() {
+
 }
-
-// Dog.prototype.pet = function(dog) {
-//   return dog.status = "happy"
-// }
-
-const sadie = new Dog(false, "black", "normal", undefined)
-const moonshine = new Dog(true, "purple", "normal", undefined)
-const atticus = new Dog(true, "silver", "normal", undefined)
 
 // Instances of Dog
 // Needed: sadie, moonshine, atticus
+function Sadie() {
+  this.status = "normal"
+  this.color = "black"
+  this.hungry = false
+}
+Sadie.prototype = new Dog()
+let sadie = new Sadie()
+
+function Moonshine() {
+  this.hungry = true
+}
+Moonshine.prototype = new Dog()
+let moonshine = new Moonshine()
+
+function Atticus() {
+
+}
+Atticus.prototype = new Dog()
+let atticus = new Atticus()
 
 //     __
 //    / /_  __  ______ ___  ____ _____  _____
@@ -33,9 +40,8 @@ const atticus = new Dog(true, "silver", "normal", undefined)
 // /_/ /_/\__,_/_/ /_/ /_/\__,_/_/ /_/____/
 
 // Human Constructor & Prototype
-function Human(cool) {
-  this.name = this
-  this.cool = cool
+function Human(coolstatus) {
+  this.cool = coolstatus
 }
 
 Human.prototype.pet = function(dog) {
@@ -49,5 +55,14 @@ Human.prototype.feed = function(dog) {
 // Instances of Human
 // Needed: mason, julia
 
-const mason = new Human(false)
-const julia = new Human(true)
+function Julia() {
+
+}
+Julia.prototype = new Human(true)
+let julia = new Julia()
+
+function Mason() {
+
+}
+Mason.prototype = new Human(false)
+let mason = new Mason()
